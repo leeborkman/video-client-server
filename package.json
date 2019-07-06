@@ -2,10 +2,11 @@
   "name": "video-api",
   "version": "1.0.0",
   "description": "Shoot tech test - back-end - Lee Borkman",
-  "main": "index.js",
+  "main": "src/server/index.js",
   "scripts": {
     "test": "test",
-    "server-dev": "nodemon src/server/index.js"
+    "server-dev": "nodemon src/server/index.js",
+    "start": "node src/server/index.js"
   },
   "keywords": [
     "video",
