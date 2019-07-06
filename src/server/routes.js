@@ -1,5 +1,6 @@
 const app = require('express');
 const files = require('./model/files');
+const uploadForm = require('./view/uploadForm');
 
 const router = app.Router();
 
@@ -9,7 +10,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/form', (req, res) => {
-  res.send('form for uploading a video');
+  res.send(uploadForm);
 });
 
 router.post('/upload', (req, res) => {
