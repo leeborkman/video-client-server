@@ -1,0 +1,23 @@
+{
+  "name": "video-api",
+  "version": "1.0.0",
+  "description": "Shoot tech test - back-end - Lee Borkman",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "server-dev": "nodemon src/server/index.js"
+  },
+  "keywords": [
+    "video",
+    "api",
+    "upload"
+  ],
+  "author": "Lee Borkman",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
