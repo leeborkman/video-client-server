@@ -1,12 +1,12 @@
 const app = require('express');
-const files = require('./model/files');
+const getFiles = require('./model/getFiles');
 const uploadForm = require('./view/uploadForm');
 
 const router = app.Router();
 
 // Only three ways through this server app
 router.get('/', async (req, res) => {
-  const result = files( (data) => { res.send({ files: data } ); });
+  const result = getFiles( (data) => { res.send({ files: data } ); });
 });
 
 router.get('/form', (req, res) => {

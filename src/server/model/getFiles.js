@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function files(callback) {
+function getFiles(callback) {
     fs.readdir("uploads", (err, items) => {
         if (err) {
             return console.log('Unable to read uploads directory: ', err);
@@ -9,4 +9,4 @@ function files(callback) {
     });
 }
 
-module.exports = files;
+module.exports = getFiles;
