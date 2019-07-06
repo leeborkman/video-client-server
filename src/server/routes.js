@@ -1,10 +1,11 @@
 const app = require('express');
+const files = require('./model/files');
 
 const router = app.Router();
 
 // Only three ways through this server app
-router.get('/', (req, res) => {
-  res.send('List of videos');
+router.get('/', async (req, res) => {
+  const result = files( (data) => { res.send({ files: data } ); });
 });
 
 router.get('/form', (req, res) => {
