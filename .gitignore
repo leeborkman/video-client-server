@@ -65,3 +65,4 @@ package-lock.json
 uploads/*
 
 src/client/build/*
+client/build/*
