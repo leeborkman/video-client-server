@@ -23,7 +23,7 @@ router.get('/api', async (req, res) => {
 
 // A development form for testing basic upload function 
 router.get('/form', (req, res) => {
-  res.sendFile(__dirname + '/view/uploadForm.html');
+  res.sendFile(__dirname + '/view/uploadForm.html'); //eslint-disable-line
 });
 
 
