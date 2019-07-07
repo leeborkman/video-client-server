@@ -1,6 +1,10 @@
 {
   "extends": ["airbnb", "prettier", "standard", "standard-react"],
   "plugins": ["prettier"],
+  "globals": {
+    "localStorage": true,
+    "fetch": true
+  },
   "rules": {
     "no-console": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
