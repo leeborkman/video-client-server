@@ -2,12 +2,12 @@
   "name": "video-api",
   "version": "1.0.0",
   "description": "Shoot tech test - back-end - Lee Borkman",
-  "main": "src/server/index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "test",
     "pretest": "eslint --ignore-path .gitignore .",
-    "server-dev": "nodemon src/server/index.js",
-    "start": "node src/server/index.js"
+    "server-dev": "nodemon server/index.js",
+    "start": "node server/index.js"
   },
   "keywords": [
     "video",
