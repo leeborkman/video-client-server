@@ -3,6 +3,7 @@ const router = require('./routes');
 
 const app = express();
 app.use('/', router);
+app.use(express.static('uploads'));
 
 
 // Setting up port and IP to run on OpenShift or locally

@@ -6,15 +6,19 @@ function getFiles(callback) {
         if (err)
             return console.log('Unable to read uploads directory: ', err); //eslint-disable-line
 
-        for (let i=0; i<items.length; i++) {
+        items.forEach( (item, i) =>  {
             let file = {};
-            file.filename = items[i];
-            file.size = fs.statSync('uploads/' + items[i]).size;
-            
+            let stats = fs.statSync('uploads/' + item);
+
+            file.filename = item;
+            file.size = stats.size;
+            file.mtime = stats.mtime;            
+
             files.push(file);
-        }    
+        });    
+
         callback(files);
-        return true;
+        return this;
     });
 }
 
