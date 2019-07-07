@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 // A simple REST File List
 router.get('/api', async (req, res) => {
-  getFiles( (data) => res.send({ files: data }) );
+  getFiles( (data) => res.json({ files: data }) );
 });
 
 
@@ -29,7 +29,7 @@ router.get('/form', (req, res) => {
 // Upload handle
 router.post('/upload', storeFile.single('file'), (req, res) => {
   try {
-    res.send(req.file);
+    res.json(req.file);
   } catch (err) {
     res.send(400);
   }
