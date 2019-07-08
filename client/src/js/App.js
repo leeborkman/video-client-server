@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react'
-import { Switch, Route, Link, BrowserRouter, Redirect } from 'react-router-dom'
+import { Switch, Route, Link, BrowserRouter } from 'react-router-dom'
 
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
