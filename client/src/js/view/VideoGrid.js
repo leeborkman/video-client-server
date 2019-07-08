@@ -5,9 +5,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 
-import GetVideoList from '../model/GetVideoList'
 import config from 'react-global-configuration'
 import ReactPlayer from 'react-player'
+import GetVideoList from '../model/GetVideoList'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -37,20 +37,20 @@ export default function VideoGrid () {
     GetVideoList(data => {
       setFiles(data.files)
     })
-  },[])
+  }, [])
 
   return (
     <div className={classes.root}>
       <Grid container justify='center' spacing={3} className={classes.grid}>
-        {files.map((file) => (
+        {files.map(file => (
           <Grid item xl={2} lg={3} md={4} sm={6} xs={12} key={file.filename}>
             <Paper className={classes.paper}>
-              <ReactPlayer 
-                url={`${config.get('videoServer')}/${file.filename}`} 
-                width='100%' 
-                height='100%' 
-                controls={true}
-                />
+              <ReactPlayer
+                url={`${config.get('videoServer')}/${file.filename}`}
+                width='100%'
+                height='100%'
+                controls
+              />
             </Paper>
           </Grid>
         ))}
