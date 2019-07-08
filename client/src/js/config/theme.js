@@ -1,7 +1,7 @@
 
 import { createMuiTheme } from '@material-ui/core/styles'
 
-// A custom theme for this app
+// Generated from two colors using https://react-theming.github.io/create-mui-theme/
 const theme = createMuiTheme({
   palette: {
     tonalOffset: 0.2,
