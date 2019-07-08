@@ -35,7 +35,7 @@ export default function VideoGrid () {
     GetVideoList(data => {
       setFiles(data.files)
     })
-  }, [])
+  },[])
 
   return (
     <div className={classes.root}>
