@@ -105,8 +105,7 @@ const theme = createMuiTheme(
           "shortest": 150,
           "complex": 375
         }
-      },
-        
+      },        
     themeName: 'Chardonnay Blizzard Blue Ponies'
   }
 )
