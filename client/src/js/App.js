@@ -26,7 +26,9 @@ function App () {
   return (
     <BrowserRouter>
       <div className={`App ${classes.root}`}>
-        <Route path='/' render={({ location }) => (
+        <Route
+          path='/'
+          render={({ location }) => (
             <>
               <AppBar position='static' color='default'>
                 <Toolbar>
