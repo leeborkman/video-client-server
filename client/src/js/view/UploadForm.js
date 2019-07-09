@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Dropzone from 'react-dropzone-uploader'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
@@ -38,13 +38,10 @@ export default function UploadForm () {
     return { url: `${config.get('videoServer')}${config.get('uploadHandler')}` }
   }
 
-  const onSubmit = (files) => {
-    console.log(files.map(f => f.meta))
-  }
+  const onSubmit = (files) => {}
 
-  const onChangeStatus = ({ metadata, file }, status) => {
+  const onChangeStatus = ({ meta, file }, status) => {
     setStatus(status)
-    console.log(status, metadata, file)
   }
 
   return (
@@ -63,7 +60,7 @@ export default function UploadForm () {
                 onSubmit={onSubmit}
                 accept='video/*'
               />
-              <div class={classes.status}>{uploadStatus}</div>
+              <div className={classes.status}>{uploadStatus}</div>
             </Typography>
           </div>
         </Paper>
