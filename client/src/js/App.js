@@ -37,7 +37,7 @@ function App () {
                   </Typography>
                 </Toolbar>
               </AppBar>
-              <Tabs value={location.pathname} indicatorColor='primary' textColor='primary' variant='fullWidth'>
+              <Tabs value={location.pathname} indicatorColor='secondary' textColor='inherit' variant='fullWidth'>
                 <Tab label='Videos' value='/' component={Link} to='/' />
                 <Tab label='Upload' value='/form' component={Link} to='/form' />
               </Tabs>

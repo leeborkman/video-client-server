@@ -3,6 +3,7 @@ import Dropzone from 'react-dropzone-uploader'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
 import config from 'react-global-configuration'
 
 const useStyles = makeStyles(theme => ({
@@ -26,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function UploadForm () {
+export default function UploadForm() {
   const classes = useStyles()
 
   const getUploadParams = ({ meta }) => {
@@ -46,12 +47,18 @@ export default function UploadForm () {
       <Grid item xl={4} lg={4} md={6} sm={6} xs={11}>
         <Paper className={classes.paper}>
           <div className={classes.dropzone}>
-            <Dropzone
-              getUploadParams={getUploadParams}
-              onChangeStatus={onChangeStatus}
-              onSubmit={onSubmit}
-              accept='video/*'
-            />
+            <Typography variant='subtitle1' color='inherit'>
+              <Dropzone
+                maxFiles={1}
+                multiple={false}
+                canCancel={false}
+                inputContent="Drop a file to upload a video (or click on the button) "
+                getUploadParams={getUploadParams}
+                onChangeStatus={onChangeStatus}
+                onSubmit={onSubmit}
+                accept='video/*'
+              />
+            </Typography>
           </div>
         </Paper>
       </Grid>
