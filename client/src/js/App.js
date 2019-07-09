@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react'
-import { Switch, Route, Link, BrowserRouter } from 'react-router-dom'
+import { Switch, Route, Link, HashRouter } from 'react-router-dom'
 
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 function App () {
   const classes = useStyles()
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className={`App ${classes.root}`}>
         <Route
           path='/'
@@ -49,7 +49,7 @@ function App () {
           )}
         />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
