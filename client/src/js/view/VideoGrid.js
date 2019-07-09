@@ -51,7 +51,7 @@ export default function VideoGrid () {
   return (
     <div className={classes.root}>
       <Grid container justify='center' spacing={3} className={classes.grid}>
-        {files.map(file => (
+        {files.sort((a, b) => a.mtime < b.mtime).map(file => (
           <Grid item xl={2} lg={3} md={4} sm={6} xs={12} key={file.filename}>
             <Paper className={classes.paper}>
               <ReactPlayer
