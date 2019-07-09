@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function UploadForm() {
+export default function UploadForm () {
   const classes = useStyles()
 
   const getUploadParams = ({ meta }) => {
@@ -52,7 +52,7 @@ export default function UploadForm() {
                 maxFiles={1}
                 multiple={false}
                 canCancel={false}
-                inputContent="Drop a file to upload a video (or click on the button) "
+                inputContent='Drop a file to upload a video (or click on the button)'
                 getUploadParams={getUploadParams}
                 onChangeStatus={onChangeStatus}
                 onSubmit={onSubmit}

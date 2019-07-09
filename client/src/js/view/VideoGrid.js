@@ -39,11 +39,9 @@ const useStyles = makeStyles(theme => ({
 export default function VideoGrid () {
   const classes = useStyles()
   const [files, setFiles] = useState([])
-  console.log('Init videogrid')
 
   useEffect(() => {
     GetVideoList(data => {
-      console.log('Setting files data')
       setFiles(data.files)
     })
   }, [])
