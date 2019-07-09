@@ -38,12 +38,12 @@ function App () {
 
               <Tabs value={location.pathname} indicatorColor='secondary' variant='fullWidth'>
                 <Tab label='Videos' value='/' component={Link} to='/' />
-                <Tab label='Upload' value='/form' component={Link} to='/form' />
+                <Tab label='Upload' value='/upload' component={Link} to='/upload' />
               </Tabs>
 
               <Switch>
                 <Route exact path='/' component={VideoGrid} />
-                <Route path='/form' component={UploadForm} />
+                <Route path='/upload' component={UploadForm} />
               </Switch>
             </>
           )}
