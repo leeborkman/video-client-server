@@ -26,26 +26,24 @@ function App () {
   return (
     <BrowserRouter>
       <div className={`App ${classes.root}`}>
-        <Route
-          path='/'
-          render={({ location }) => (
-            <React.Fragment>
+        <Route path='/' render={({ location }) => (
+            <>
               <AppBar position='static' color='default'>
                 <Toolbar>
-                  <Typography variant='h6' color='inherit'>
-                    Video Tech Test - Lee Borkman
-                  </Typography>
+                  <Typography variant='h6'>Video Tech Test - Lee Borkman</Typography>
                 </Toolbar>
               </AppBar>
-              <Tabs value={location.pathname} indicatorColor='primary' textColor='primary' variant='fullWidth'>
+
+              <Tabs value={location.pathname} indicatorColor='secondary' variant='fullWidth'>
                 <Tab label='Videos' value='/' component={Link} to='/' />
                 <Tab label='Upload' value='/form' component={Link} to='/form' />
               </Tabs>
+
               <Switch>
                 <Route exact path='/' component={VideoGrid} />
                 <Route path='/form' component={UploadForm} />
               </Switch>
-            </React.Fragment>
+            </>
           )}
         />
       </div>
