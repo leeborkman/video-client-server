@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
+import filesize from 'filesize'
 
 import config from 'react-global-configuration'
 import ReactPlayer from 'react-player'
@@ -25,15 +26,24 @@ const useStyles = makeStyles(theme => ({
     textOverflow: 'ellipsis',
     color: theme.palette.text.primary,
     backgroundColor: theme.palette.primary.main
+  },
+  filename: {
+    color: '#f00',
+    fontWeight: 'bold'
+  },
+  filesize: {
+    color: '#00f'
   }
 }))
 
 export default function VideoGrid () {
   const classes = useStyles()
   const [files, setFiles] = useState([])
+  console.log("Init videogrid")
 
   useEffect(() => {
     GetVideoList(data => {
+      console.log("Setting files data")
       setFiles(data.files)
     })
   }, [])
@@ -50,6 +60,8 @@ export default function VideoGrid () {
                 height='100%'
                 controls
               />
+              <div className={classes.filename}>{file.filename}</div>
+              <div className={classes.filesize}>{filesize(file.size)}</div>
             </Paper>
           </Grid>
         ))}
