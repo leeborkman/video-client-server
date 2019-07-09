@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Dropzone from 'react-dropzone-uploader'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function UploadForm() {
+export default function UploadForm () {
   const classes = useStyles()
 
   const getUploadParams = ({ meta }) => {
@@ -50,7 +50,7 @@ export default function UploadForm() {
               getUploadParams={getUploadParams}
               onChangeStatus={onChangeStatus}
               onSubmit={onSubmit}
-              accept="video/*"
+              accept='video/*'
             />
           </div>
         </Paper>
@@ -58,7 +58,3 @@ export default function UploadForm() {
     </Grid>
   )
 }
-
-
-
-
