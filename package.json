@@ -4,9 +4,8 @@
   "description": "Shoot tech test - back-end - Lee Borkman",
   "main": "server/index.js",
   "scripts": {
-    "test": "test",
-    "jest": "jest",
-    "pretest": "eslint  .",
+    "test": "jest",
+    "lint": "eslint  .",
     "server-dev": "nodemon server/index.js",
     "start": "node server/index.js"
   },

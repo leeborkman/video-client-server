@@ -68,3 +68,4 @@ uploads/*
 
 src/client/build/*
 client/build/*
+*.test.js
