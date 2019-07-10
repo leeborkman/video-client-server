@@ -1,6 +1,6 @@
 const app = require('express');
 const getFiles = require('./model/getFiles');
-const storeFile = require('./model/storeFile')
+const storeFile = require('./model/storeFile');
 
 const router = app.Router();
 

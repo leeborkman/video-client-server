@@ -18,3 +18,5 @@ app.listen(serverPort, serverIP, () => {
   console.log( `Listening on ${  serverIP  }, port ${  serverPort}` ); //eslint-disable-line
 });
 
+module.exports = app;
+
