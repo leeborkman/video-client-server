@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount, render } from '../../enzyme';
 
-import setConfigs from '../config/config';
+import setConfigs from '../config';
 import VideoGrid from './VideoGrid';
 
 setConfigs();
@@ -11,8 +11,6 @@ const testFiles = [
   { 'filename': 'small.mp4', 'size': 383631, 'mtime': '2019-07-09T03:30:50.927Z' },
   { 'filename': 'small2.mp4', 'size': 383631, 'mtime': '2019-07-09T06:02:00.957Z' }
 ];
-
-const noTestFiles = [];
 
 describe('VideoGrid tests', () => {
   it('renders the top-level VideoGrid element', () => {
@@ -26,7 +24,7 @@ describe('VideoGrid tests', () => {
   });
 
   it('renders NO lower-level ReactPlayer elements when there are no files', () => {
-    const wrapper = shallow(<VideoGrid isTest testFiles={noTestFiles} />);
+    const wrapper = shallow(<VideoGrid isTest testFiles={[]} />);
     expect(wrapper.find('ReactPlayer').length).toBe(0);
   });
 

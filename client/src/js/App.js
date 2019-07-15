@@ -9,7 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-import setConfigs from './config/config';
+import setConfigs from './config';
 import VideoGrid from './view/VideoGrid';
 import UploadForm from './view/UploadForm';
 

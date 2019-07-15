@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
-import setConfigs from '../config/config';
+import setConfigs from '../config';
 import getVideoList from './getVideoList';
 
 setConfigs();

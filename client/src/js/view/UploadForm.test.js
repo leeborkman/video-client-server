@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import UploadForm from './UploadForm';
-import setConfigs from '../config/config';
+import setConfigs from '../config';
 
 setConfigs();
 
