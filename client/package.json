@@ -22,7 +22,6 @@
     "test": "react-scripts test",
     "lint": "eslint -c ./eslintrc.json --ignore-path ../.gitignore .",
     "lintfix": "eslint --fix -c ./eslintrc.json --ignore-path ../.gitignore ."
-    
   },
   "browserslist": {
     "production": [
@@ -39,6 +38,8 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.4",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
