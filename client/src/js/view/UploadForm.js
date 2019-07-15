@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import Dropzone from 'react-dropzone-uploader'
-import { makeStyles } from '@material-ui/core/styles'
-import Paper from '@material-ui/core/Paper'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
-import config from 'react-global-configuration'
+import React, { useState } from 'react';
+import Dropzone from 'react-dropzone-uploader';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import config from 'react-global-configuration';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -28,21 +28,21 @@ const useStyles = makeStyles(theme => ({
     fontSize: '80%',
     fontStyle: 'italic'
   }
-}))
+}));
 
 export default function UploadForm () {
-  const classes = useStyles()
-  const [uploadStatus, setStatus] = useState('waiting for a file...')
+  const classes = useStyles();
+  const [uploadStatus, setStatus] = useState('waiting for a file...');
 
   const getUploadParams = ({ meta }) => {
-    return { url: `${config.get('videoServer')}${config.get('uploadHandler')}` }
-  }
+    return { url: `${config.get('videoServer')}${config.get('uploadHandler')}` };
+  };
 
-  const onSubmit = (files) => {}
+  const onSubmit = (files) => {};
 
   const onChangeStatus = ({ meta, file }, status) => {
-    setStatus(status)
-  }
+    setStatus(status);
+  };
 
   return (
     <Grid container justify='center' spacing={3} className={classes.grid}>
@@ -66,5 +66,5 @@ export default function UploadForm () {
         </Paper>
       </Grid>
     </Grid>
-  )
+  );
 }

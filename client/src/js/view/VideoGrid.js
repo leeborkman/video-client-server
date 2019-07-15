@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-filename-extension */
-import React, { useState, useEffect } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import Paper from '@material-ui/core/Paper'
-import Grid from '@material-ui/core/Grid'
-import filesize from 'filesize'
+import React, { useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import filesize from 'filesize';
 
-import config from 'react-global-configuration'
-import ReactPlayer from 'react-player'
-import getVideoList from '../model/getVideoList'
+import config from 'react-global-configuration';
+import ReactPlayer from 'react-player';
+import getVideoList from '../model/getVideoList';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -34,17 +34,17 @@ const useStyles = makeStyles(theme => ({
   filesize: {
     color: '#00f'
   }
-}))
+}));
 
 export default function VideoGrid () {
-  const classes = useStyles()
-  const [files, setFiles] = useState([])
+  const classes = useStyles();
+  const [files, setFiles] = useState([]);
 
   useEffect(() => {
     getVideoList(data => {
-      setFiles(data.files)
-    })
-  }, [])
+      setFiles(data.files);
+    });
+  }, []);
 
   return (
     <div className={classes.root}>
@@ -65,5 +65,5 @@ export default function VideoGrid () {
         ))}
       </Grid>
     </div>
-  )
+  );
 }

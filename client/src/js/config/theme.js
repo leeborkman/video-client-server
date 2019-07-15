@@ -1,5 +1,5 @@
 
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles';
 
 // Generated from two colors using https://react-theming.github.io/create-mui-theme/
 const theme = createMuiTheme({
@@ -106,6 +106,6 @@ const theme = createMuiTheme({
     }
   },
   themeName: 'Chardonnay Blizzard Blue Ponies'
-})
+});
 
-export default theme
+export default theme;

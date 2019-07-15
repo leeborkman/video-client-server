@@ -1,28 +1,28 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react'
-import { Switch, Route, Link, HashRouter } from 'react-router-dom'
+import React from 'react';
+import { Switch, Route, Link, HashRouter } from 'react-router-dom';
 
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
-import setConfigs from './config/config'
-import VideoGrid from './view/VideoGrid'
-import UploadForm from './view/UploadForm'
+import setConfigs from './config/config';
+import VideoGrid from './view/VideoGrid';
+import UploadForm from './view/UploadForm';
 
-setConfigs()
+setConfigs();
 
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: '#fff'
   }
-}))
+}));
 
 function App () {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <HashRouter>
       <div className={`App ${classes.root}`}>
@@ -50,7 +50,7 @@ function App () {
         />
       </div>
     </HashRouter>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,4 +1,4 @@
-import config from 'react-global-configuration'
+import config from 'react-global-configuration';
 
 export default function setConfigs () {
   config.set({
@@ -6,5 +6,5 @@ export default function setConfigs () {
     videoServerLocal: '//localhost:8080',
     api: '/api',
     uploadHandler: '/upload'
-  })
+  });
 }

@@ -20,7 +20,9 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "test": "react-scripts test",
-    "lint": "eslint -c ./eslintrc.json --ignore-path ../.gitignore ."
+    "lint": "eslint -c ./eslintrc.json --ignore-path ../.gitignore .",
+    "lintfix": "eslint --fix -c ./eslintrc.json --ignore-path ../.gitignore ."
+    
   },
   "browserslist": {
     "production": [
