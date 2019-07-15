@@ -7,7 +7,7 @@ import filesize from 'filesize'
 
 import config from 'react-global-configuration'
 import ReactPlayer from 'react-player'
-import GetVideoList from '../model/GetVideoList'
+import getVideoList from '../model/getVideoList'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,7 +41,7 @@ export default function VideoGrid () {
   const [files, setFiles] = useState([])
 
   useEffect(() => {
-    GetVideoList(data => {
+    getVideoList(data => {
       setFiles(data.files)
     })
   }, [])

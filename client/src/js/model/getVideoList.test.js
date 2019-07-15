@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/extend-expect'
 import setConfigs from '../config/config'
-import GetVideoList from './GetVideoList'
+import getVideoList from './getVideoList'
 
 setConfigs()
 
@@ -12,7 +12,7 @@ test('data.files is an array', done => {
       done.fail('Was not an array')
     }
   }
-  GetVideoList(callback)
+  getVideoList(callback)
 })
 
 test('data.files has at least one element', done => {
@@ -23,5 +23,5 @@ test('data.files has at least one element', done => {
       done.fail('Array was zero length')
     }
   }
-  GetVideoList(callback)
+  getVideoList(callback)
 })
