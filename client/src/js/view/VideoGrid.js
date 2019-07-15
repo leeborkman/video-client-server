@@ -47,7 +47,7 @@ export default function VideoGrid () {
   }, []);
 
   return (
-    <div className={classes.root}>
+    <div className={`${classes.root} VideoGrid`}>
       <Grid container justify='center' spacing={3} className={classes.grid}>
         {files.sort((a, b) => b.mtime.localeCompare(a.mtime)).map(file => (
           <Grid item xl={2} lg={3} md={4} sm={6} xs={12} key={file.filename}>
