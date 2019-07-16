@@ -37,19 +37,15 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function VideoGrid (props) {
+function VideoGrid(props) {
   const classes = useStyles();
-  const { isTest, testFiles } = props;
-  const initialFiles = isTest ? testFiles : [];
-  const [files, setFiles] = useState(initialFiles);
+  const [files, setFiles] = useState([]);
 
   useEffect(() => {
-    if (!isTest) { 
-      getVideoList().then(data => {
-        setFiles(data.files);
-      });
-    }
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    getVideoList().then(data => {
+      setFiles(data.files);
+    });
+  }, []);
 
   return (
     <div className={`${classes.root} VideoGrid`}>
