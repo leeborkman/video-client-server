@@ -1,20 +1,17 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
 import { shallow, mount } from '../../enzyme';
 
 import setConfigs from '../config';
 
-jest.mock('../model/getVideoList');
-import getVideoList from '../model/getVideoList';
-
 import VideoGrid from './VideoGrid';
+
+jest.mock('../model/getVideoList');
 
 setConfigs();
 
-function flushPromises() {
+function flushPromises () {
   return new Promise(resolve => setImmediate(resolve));
 }
-
 
 describe('VideoGrid tests', () => {
   it('renders the top-level VideoGrid element', () => {
@@ -37,5 +34,4 @@ describe('VideoGrid tests', () => {
       expect(wrapper.find('ReactPlayer')).toHaveLength(2);
     });
   });
-
 });

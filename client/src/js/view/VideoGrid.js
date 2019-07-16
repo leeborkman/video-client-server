@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -37,7 +36,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function VideoGrid(props) {
+export default function VideoGrid () {
   const classes = useStyles();
   const [files, setFiles] = useState([]);
 
@@ -71,15 +70,3 @@ function VideoGrid(props) {
     </div>
   );
 }
-
-VideoGrid.propTypes = {
-  isTest: PropTypes.bool,
-  testFiles: PropTypes.instanceOf(Array)
-};
-
-VideoGrid.defaultProps = {
-  isTest: false,
-  testFiles: []
-};
-
-export default VideoGrid;
