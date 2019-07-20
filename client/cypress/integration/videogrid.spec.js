@@ -1,5 +1,5 @@
 describe('Basic Video-Client interface tests', function() {
-    it('Visits the local Video Grid client', function() {
+    it('Clicks around the tabs and finds one video in the expected grid', function() {
       cy.visit('http://localhost:3000')
       cy.contains('Upload')
       cy.contains('Upload').click()
