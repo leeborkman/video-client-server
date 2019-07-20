@@ -1,37 +1,41 @@
-import React from 'react';
-import { shallow, mount } from '../../enzyme';
+import React from 'react'
 
-import setConfigs from '../config';
+import { render, fireEvent, cleanup, waitForElement } from '@testing-library/react'
 
-import VideoGrid from './VideoGrid';
+import '@testing-library/jest-dom/extend-expect'
 
-jest.mock('../model/getVideoList');
+import setConfigs from '../config'
 
-setConfigs();
+import VideoGrid from './VideoGrid'
 
-function flushPromises () {
-  return new Promise(resolve => setImmediate(resolve));
-}
+afterEach(cleanup)
 
-describe('VideoGrid tests', () => {
-  it('renders the top-level VideoGrid element', () => {
-    const wrapper = shallow(<VideoGrid />);
-    expect(wrapper.find('.VideoGrid').length).toBeGreaterThan(0);
-  });
+jest.mock('../model/getVideoList')
 
-  it('renders lower-level ReactPlayer element', () => {
-    const wrapper = mount(<VideoGrid />);
-    return flushPromises().then(() => {
-      wrapper.update();
-      expect(wrapper.find('ReactPlayer').length).toBeGreaterThan(0);
-    });
-  });
+setConfigs()
 
-  it('rejects the non-video file, and renders only two FilePlayer elements', async () => {
-    const wrapper = mount(<VideoGrid />);
-    return flushPromises().then(() => {
-      wrapper.update();
-      expect(wrapper.find('ReactPlayer')).toHaveLength(2);
-    });
-  });
-});
+test('loads and displays one VideoGrid', async () => {
+  const { getByText, getByTestId, queryAllByTestId, container, asFragment } = render(<VideoGrid />)
+
+  const videoGridNode = await waitForElement(() => getByTestId('video-grid'))
+
+  expect(queryAllByTestId('video-grid')).toHaveLength(1)
+})
+
+test('displays at least one ReactPlayer', async () => {
+  const { getByText, getByTestId, queryAllByTestId, container, asFragment } = render(<VideoGrid />)
+
+  const videoGridNode = await waitForElement(() => getByTestId('video-grid'))
+
+  expect(getByTestId('video-grid')).toHaveAttribute('class')
+  expect(queryAllByTestId('react-player').length).toBeGreaterThan(0)
+})
+
+test('displays exactly TWO ReactPlayers, ignoring the non-video file', async () => {
+  const { getByText, getByTestId, queryAllByTestId, container, asFragment } = render(<VideoGrid />)
+
+  const videoGridNode = await waitForElement(() => getByTestId('video-grid'))
+
+  expect(getByTestId('video-grid')).toHaveAttribute('class')
+  expect(queryAllByTestId('react-player')).toHaveLength(2)
+})
