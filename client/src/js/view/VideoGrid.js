@@ -47,22 +47,23 @@ export default function VideoGrid () {
   }, []);
 
   return (
-    <div className={`${classes.root} VideoGrid`}>
-      <Grid container justify='center' spacing={3} className={classes.grid}>
+    <div className={classes.root} data-testid='video-grid'>
+      <Grid container justify='center' spacing={3} className={classes.grid} data-testid='grid-top'>
         {files
           .sort((a, b) => b.mtime.localeCompare(a.mtime))
           .map(file => (
-            <Grid item xl={2} lg={3} md={4} sm={6} xs={12} key={file.filename}>
-              <Paper className={classes.paper}>
+            <Grid item xl={2} lg={3} md={4} sm={6} xs={12} key={file.filename} data-testid='grid-inner'>
+              <Paper className={classes.paper} data-testid='paper'>
                 <ReactPlayer
                   url={`${config.get('videoServer')}/${file.filename}`}
                   width='100%'
                   height='100%'
                   controls
                   className='ReactPlayer'
+                  data-testid='react-player'
                 />
-                <div className={classes.filename}>{file.filename}</div>
-                <div className={classes.filesize}>{filesize(file.size)}</div>
+                <div className={classes.filename} data-testid='filename'>{file.filename}</div>
+                <div className={classes.filesize} data-testid='filesize'>{filesize(file.size)}</div>
               </Paper>
             </Grid>
           ))}
