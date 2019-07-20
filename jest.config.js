@@ -1,20 +1,16 @@
 module.exports = {
-    "collectCoverage": true,
+  collectCoverage: true,
 
-    "testPathIgnorePatterns": [
-        "node_modules",
-        "client/src/*",
-        "uploads"
+  testPathIgnorePatterns: ['node_modules', 'client/src/*', 'client/cypress/*', 'uploads'],
+  coverageThreshold: {
+    global: {
+      branches: 20,
+      functions: 30,
+      lines: 50,
+      statements: 50
+    }
+  },
 
-    ],
-    "coverageThreshold": {
-        "global": {
-            "branches": 20,
-            "functions": 30,
-            "lines": 50,
-            "statements": 50
-        }
-    },
 
-    "verbose": false
+  verbose: true
 }
