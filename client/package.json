@@ -25,7 +25,9 @@
     "lintfix": "eslint --fix -c ./eslintrc.json --ignore-path ../.gitignore ."
   },
   "jest": {
-    "coverageReporters": ["text"]
+    "coverageReporters": [
+      "text"
+    ]
   },
   "browserslist": {
     "production": [
@@ -43,6 +45,7 @@
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.5",
     "cypress": "^3.4.0",
+    "electron": "^5.0.7",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
